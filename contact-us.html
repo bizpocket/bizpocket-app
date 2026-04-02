@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Support – BizPocket</title>
+  <meta name="description" content="Get in touch with the BizPocket team. We're here to help with any questions about your account, billing, or the app." />
+  <link rel="icon" type="image/png" href="images/app_icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:   #1A1A1A;
+      --bg:      #F8F9FA;
+      --surface: #FFFFFF;
+      --muted:   #6B7280;
+      --border:  #E5E7EB;
+      --success: #4CAF50;
+      --radius:  14px;
+      --shadow:  0 4px 32px rgba(26,26,26,.10);
+      --shadow-md: 0 8px 48px rgba(26,26,26,.14);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--bg);
+      color: var(--black);
+      line-height: 1.65;
+    }
+    h1,h2,h3,h4 { font-family: 'Outfit', sans-serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      padding: 0 24px;
+      background: rgba(26,26,26,.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .nav-inner {
+      max-width: 1140px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { height: 34px; width: auto; filter: invert(1) brightness(2); }
+    .nav-logo span { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.7); font-family: 'Outfit', sans-serif;
+      font-weight: 500; font-size: .9rem; transition: color .2s;
+    }
+    .nav-back:hover { color: #fff; }
+    .nav-cta {
+      background: #fff; color: #1A1A1A;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .88rem;
+      padding: 9px 22px; border-radius: 10px; border: 2px solid #fff;
+      display: inline-flex; align-items: center; gap: 7px;
+      transition: background .2s, color .2s, transform .15s, box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(255,255,255,.15);
+    }
+    .nav-cta:hover { background: transparent; color: #fff; transform: translateY(-2px); box-shadow: 0 0 20px rgba(255,255,255,.2); }
+
+    /* HERO */
+    .page-hero {
+      background: var(--black); padding: 140px 0 80px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+      color: #fff; margin-bottom: 14px; letter-spacing: -.02em;
+    }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.55); max-width: 480px; margin: 0 auto; }
+
+    /* MAIN CONTENT */
+    .content { padding: 80px 0 100px; }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start;
+    }
+
+    /* CONTACT CARDS */
+    .contact-cards { display: flex; flex-direction: column; gap: 16px; }
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 22px;
+      display: flex; align-items: flex-start; gap: 16px;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .contact-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .contact-card-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(0,0,0,.06); display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; flex-shrink: 0;
+    }
+    .contact-card h3 {
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .95rem;
+      margin-bottom: 4px;
+    }
+    .contact-card p { font-size: .83rem; color: var(--muted); line-height: 1.6; }
+    .contact-card a { color: var(--black); font-weight: 600; font-size: .88rem; margin-top: 6px; display: inline-block; border-bottom: 1.5px solid var(--black); transition: opacity .2s; }
+    .contact-card a:hover { opacity: .6; }
+
+    /* FORM */
+    .form-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 36px;
+      box-shadow: var(--shadow);
+    }
+    .form-card h2 {
+      font-family: 'Outfit', sans-serif; font-weight: 800;
+      font-size: 1.5rem; margin-bottom: 6px;
+    }
+    .form-card > p { font-size: .88rem; color: var(--muted); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; }
+    .form-group label {
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: .82rem;
+      color: var(--black); letter-spacing: .02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Open Sans', sans-serif; font-size: .9rem;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 11px 14px; background: var(--bg); color: var(--black);
+      transition: border-color .2s, box-shadow .2s; outline: none;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--black); box-shadow: 0 0 0 3px rgba(26,26,26,.08);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { cursor: pointer; }
+    .form-submit {
+      width: 100%; background: var(--black); color: #fff;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem;
+      padding: 14px; border-radius: 12px; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+      margin-top: 4px;
+    }
+    .form-submit:hover { background: #333; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.22); }
+    .form-submit:active { transform: translateY(0); }
+
+    /* Success message */
+    .success-msg {
+      display: none; text-align: center; padding: 32px 20px;
+    }
+    .success-msg .checkmark {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(76,175,80,.12); color: var(--success);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin: 0 auto 16px;
+    }
+    .success-msg h3 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; margin-bottom: 8px; }
+    .success-msg p { font-size: .88rem; color: var(--muted); }
+
+    /* FAQ */
+    .faq { padding: 0 0 100px; }
+    .faq-title {
+      font-family: 'Outfit', sans-serif; font-weight: 800;
+      font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -.02em;
+      margin-bottom: 36px; text-align: center;
+    }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 860px; margin: 0 auto; }
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 20px;
+      transition: box-shadow .2s;
+    }
+    .faq-item:hover { box-shadow: var(--shadow); }
+    .faq-item h4 {
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .93rem;
+      margin-bottom: 8px;
+    }
+    .faq-item p { font-size: .84rem; color: var(--muted); line-height: 1.7; }
+
+    /* FOOTER */
+    footer { background: #111; color: rgba(255,255,255,.45); padding: 40px 0 28px; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom span { font-size: .8rem; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo img { height: 28px; filter: invert(1) brightness(2); }
+
+    @media (max-width: 860px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" style="text-decoration:none;"><div class="nav-logo">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjQ5IiB2aWV3Qm94PSIwIDAgMTgwIDQ5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNC4yODU3MSAxNC44NTYySDI1LjcxNDNDMjUuOTY0NiAxNC44NTYxIDI2LjIxNDcgMTQuODcyIDI2LjQ2MjkgMTQuOTAzN0MyNi4zNzg4IDE0LjMxMyAyNi4xNzU5IDEzLjc0NTMgMjUuODY2NCAxMy4yMzUxQzI1LjU1NjkgMTIuNzI0OSAyNS4xNDc0IDEyLjI4MjYgMjQuNjYyMyAxMS45MzQ5QzI0LjE3NzMgMTEuNTg3MyAyMy42MjY5IDExLjM0MTQgMjMuMDQ0NCAxMS4yMTIzQzIyLjQ2MTggMTEuMDgzMSAyMS44NTkxIDExLjA3MzIgMjEuMjcyNSAxMS4xODMyTDMuNjQ5NTUgMTQuMTkxOUgzLjYyOTQ2QzIuNTIzMjYgMTQuNDAzNCAxLjUzOTU1IDE1LjAyOTMgMC44NzkyNDEgMTUuOTQxN0MxLjg3NDA2IDE1LjIzNDEgMy4wNjQ5MSAxNC44NTQ2IDQuMjg1NzEgMTQuODU2MlpNMjUuNzE0MyAxNi40NjMzSDQuMjg1NzFDMy4xNDk0NSAxNi40NjQ2IDIuMDYwMDkgMTYuOTE2NSAxLjI1NjYzIDE3LjcyQzAuNDUzMTY4IDE4LjUyMzQgMC4wMDEyNDA3NSAxOS42MTI4IDAgMjAuNzQ5MVYzMy42MDYyQzAuMDAxMjQwNzUgMzQuNzQyNSAwLjQ1MzE2OCAzNS44MzE4IDEuMjU2NjMgMzYuNjM1M0MyLjA2MDA5IDM3LjQzODcgMy4xNDk0NSAzNy44OTA3IDQuMjg1NzEgMzcuODkxOUgyNS43MTQzQzI2Ljg1MDUgMzcuODkwNyAyNy45Mzk5IDM3LjQzODcgMjguNzQzNCAzNi42MzUzQzI5LjU0NjggMzUuODMxOCAyOS45OTg4IDM0Ljc0MjUgMzAgMzMuNjA2MlYyMC43NDkxQzI5Ljk5ODggMTkuNjEyOCAyOS41NDY4IDE4LjUyMzQgMjguNzQzNCAxNy43MkMyNy45Mzk5IDE2LjkxNjUgMjYuODUwNSAxNi40NjQ2IDI1LjcxNDMgMTYuNDYzM1oiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0wLjAzMzQ2MTggMjUuMjY3OFYxOC42MDQ5QzAuMDMzNDYxOCAxNy4xNTM4IDAuODM3MDMzIDE0LjcyMSAzLjYyNjEgMTQuMTk0QzUuOTkzMjggMTMuNzUgOC4zMzcwMyAxMy43NSA4LjMzNzAzIDEzLjc1QzguMzM3MDMgMTMuNzUgOS44NzcyMSAxNC44MjE0IDguNjA0ODkgMTQuODIxNEM3LjMzMjU3IDE0LjgyMTQgNy4zNjYwNSAxNi40NjIgOC42MDQ4OSAxNi40NjJDOS44NDM3MyAxNi40NjIgOC42MDQ4OSAxOC4wMzU3IDguNjA0ODkgMTguMDM1N0wzLjYxNjA1IDIzLjY5NDJMMC4wMzM0NjE4IDI1LjI2NzhaIiBmaWxsPSJibGFjayIvPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfNDY0XzI5NikiPgo8cGF0aCBkPSJNMTcuNDQzMSAyNC4wNjA1SDIxLjIyNjVWMjcuODQzOSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjAxODU5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTIxLjIyNjUgMjQuMDYwNUwxNS44ODI2IDI5LjQwNDVDMTUuNzk0MiAyOS40OTEyIDE1LjY3NTMgMjkuNTM5NyAxNS41NTE1IDI5LjUzOTdDMTUuNDI3NyAyOS41Mzk3IDE1LjMwODkgMjkuNDkxMiAxNS4yMjA1IDI5LjQwNDVMMTMuMDQ1MSAyNy4yMjkxQzEyLjk1NjcgMjcuMTQyNCAxMi44Mzc4IDI3LjA5MzkgMTIuNzE0IDI3LjA5MzlDMTIuNTkwMiAyNy4wOTM5IDEyLjQ3MTQgMjcuMTQyNCAxMi4zODMgMjcuMjI5MUw4LjkzMDY2IDMwLjY4MTQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4wMTg1OSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvZz4KPHBhdGggZD0iTTQ1LjM1NCAyNC40MTcyVjIyLjE2NjhINDguNzkwNEM0OS4zNzg0IDIyLjE2NjggNDkuODc1MSAyMi4wNzU2IDUwLjI4MDUgMjEuODkzMUM1MC43MDYzIDIxLjcxMDcgNTEuMDMwNyAyMS40NTcyIDUxLjI1MzcgMjEuMTMyOUM1MS40NzY3IDIwLjc4ODIgNTEuNTg4MiAyMC4zNzI2IDUxLjU4ODIgMTkuODg2QzUxLjU4ODIgMTkuMTU2MiA1MS4zMzQ4IDE4LjYwODggNTAuODI3OSAxOC4yNDM5QzUwLjM0MTQgMTcuODc5IDQ5LjY2MjIgMTcuNjk2NSA0OC43OTA0IDE3LjY5NjVINDYuNjYxN1YzMS4wMTYySDQ5LjI3N0M0OS45NDYgMzEuMDE2MiA1MC41NDQxIDMwLjkzNTEgNTEuMDcxMiAzMC43NzNDNTEuNTk4MyAzMC41OTA1IDUyLjAxMzkgMzAuMzA2NyA1Mi4zMTggMjkuOTIxNUM1Mi42NDI0IDI5LjUxNiA1Mi44MDQ2IDI4Ljk2ODYgNTIuODA0NiAyOC4yNzkzQzUyLjgwNDYgMjcuODMzMyA1Mi43MTM0IDI3LjQ0ODEgNTIuNTMwOSAyNy4xMjM3QzUyLjM0ODQgMjYuNzk5MyA1Mi4wOTUgMjYuNTM1OCA1MS43NzA2IDI2LjMzM0M1MS40NDYzIDI2LjEzMDMgNTEuMDcxMiAyNS45ODg0IDUwLjY0NTUgMjUuOTA3M0M1MC4yNCAyNS44MDU5IDQ5Ljc4MzggMjUuNzU1MiA0OS4yNzcgMjUuNzU1Mkg0NS4zNTRWMjIuOTU3NUg0OS44NTQ4QzUwLjg4ODcgMjIuOTU3NSA1MS44OTIzIDIzLjA2OSA1Mi44NjU0IDIzLjI5MkM1My44Mzg1IDIzLjUxNSA1NC43MjA0IDIzLjg3OTkgNTUuNTExMSAyNC4zODY4QzU2LjMwMTggMjQuODczMyA1Ni45MzAzIDI1LjUwMTggNTcuMzk2NiAyNi4yNzIyQzU3Ljg4MzEgMjcuMDIyMyA1OC4xMjY0IDI3LjkzNDcgNTguMTI2NCAyOS4wMDkyQzU4LjEyNjQgMzAuNDI4MyA1Ny43ODE4IDMxLjU3MzggNTcuMDkyNSAzMi40NDU1QzU2LjQyMzQgMzMuMzE3MyA1NS40NzA2IDMzLjk2NiA1NC4yMzM5IDM0LjM5MThDNTIuOTk3MiAzNC43OTczIDUxLjUzNzUgMzUgNDkuODU0OCAzNUg0MS41MjIzVjEzLjcxMjdINDkuMzM3OEM1MC44MTc4IDEzLjcxMjcgNTIuMTE1MyAxMy45MTU1IDUzLjIzMDMgMTQuMzIwOUM1NC4zNjU3IDE0LjcwNjEgNTUuMjU3NyAxNS4zMDQyIDU1LjkwNjUgMTYuMTE1MkM1Ni41NzU1IDE2LjkwNTggNTYuOTEgMTcuOTA5NCA1Ni45MSAxOS4xMjU4QzU2LjkxIDIwLjI0MDggNTYuNTc1NSAyMS4xOTM3IDU1LjkwNjUgMjEuOTg0NEM1NS4yNTc3IDIyLjc3NSA1NC4zNjU3IDIzLjM4MzIgNTMuMjMwMyAyMy44MDlDNTIuMTE1MyAyNC4yMTQ1IDUwLjgxNzggMjQuNDE3MiA0OS4zMzc4IDI0LjQxNzJINDUuMzU0Wk02MC45ODY5IDE1Ljc1MDJDNjAuOTg2OSAxNS4wMjA0IDYxLjI1MDQgMTQuNDMyNCA2MS43Nzc2IDEzLjk4NjRDNjIuMzA0NyAxMy41MjAxIDYyLjkzMzEgMTMuMjg3IDYzLjY2MyAxMy4yODdDNjQuNDEzMSAxMy4yODcgNjUuMDQxNiAxMy41MjAxIDY1LjU0ODQgMTMuOTg2NEM2Ni4wNzU2IDE0LjQzMjQgNjYuMzM5MSAxNS4wMjA0IDY2LjMzOTEgMTUuNzUwMkM2Ni4zMzkxIDE2LjQ4MDEgNjYuMDc1NiAxNy4wNzgxIDY1LjU0ODQgMTcuNTQ0NEM2NS4wNDE2IDE4LjAxMDcgNjQuNDEzMSAxOC4yNDM5IDYzLjY2MyAxOC4yNDM5QzYyLjkzMzEgMTguMjQzOSA2Mi4zMDQ3IDE4LjAxMDcgNjEuNzc3NiAxNy41NDQ0QzYxLjI1MDQgMTcuMDc4MSA2MC45ODY5IDE2LjQ4MDEgNjAuOTg2OSAxNS43NTAyWk02MS40NDMgMjEuMDExMkg2NS44ODNWMzVINjEuNDQzVjIxLjAxMTJaTTc1LjY4NjMgMjUuMTc3NEg2OS42MDQyVjIxLjAxMTJIODMuMjg4OUw3Ni4yOTQ1IDMwLjgzMzhIODIuMzE1N1YzNUg2OC4zMjdMNzUuNjg2MyAyNS4xNzc0Wk04Ni4wMDk0IDEzLjcxMjdIOTEuMTQ4OFYzNUg4Ni4wMDk0VjEzLjcxMjdaTTg5LjIzMjkgMTcuOTM5OFYxMy43MTI3SDkzLjM5OTFDOTUuMjAzNSAxMy43MTI3IDk2LjcxMzkgMTMuOTk2NiA5Ny45MzAzIDE0LjU2NDJDOTkuMTY3IDE1LjExMTYgMTAwLjEgMTUuOTAyMyAxMDAuNzI4IDE2LjkzNjJDMTAxLjM1NyAxNy45NzAyIDEwMS42NzEgMTkuMjE3IDEwMS42NzEgMjAuNjc2N0MxMDEuNjcxIDIyLjA5NTkgMTAxLjM1NyAyMy4zMzI1IDEwMC43MjggMjQuMzg2OEMxMDAuMSAyNS40MjA3IDk5LjE2NyAyNi4yMjE1IDk3LjkzMDMgMjYuNzg5MkM5Ni43MTM5IDI3LjMzNjYgOTUuMjAzNSAyNy42MTAzIDkzLjM5OTEgMjcuNjEwM0g4OS4yMzI5VjIzLjM4MzJIOTMuMzk5MUM5NC40MzMxIDIzLjM4MzIgOTUuMjQ0IDIzLjE1MDEgOTUuODMyIDIyLjY4MzhDOTYuNDE5OSAyMi4yMTc1IDk2LjcxMzkgMjEuNTQ4NSA5Ni43MTM5IDIwLjY3NjdDOTYuNzEzOSAxOS43ODQ3IDk2LjQxOTkgMTkuMTA1NSA5NS44MzIgMTguNjM5MkM5NS4yNDQgMTguMTcyOSA5NC40MzMxIDE3LjkzOTggOTMuMzk5MSAxNy45Mzk4SDg5LjIzMjlaTTEwMi43NTkgMjguMDA1NkMxMDIuNzU5IDI2LjUyNTYgMTAzLjEwMyAyNS4yMzgzIDEwMy43OTMgMjQuMTQzNUMxMDQuNDgyIDIzLjA0ODcgMTA1LjQzNSAyMi4xOTcyIDEwNi42NTEgMjEuNTg5QzEwNy44NjggMjAuOTgwOCAxMDkuMjM2IDIwLjY3NjcgMTEwLjc1NyAyMC42NzY3QzExMi4yNzcgMjAuNjc2NyAxMTMuNjM1IDIwLjk4MDggMTE0LjgzMiAyMS41ODlDMTE2LjA0OCAyMi4xOTcyIDExNy4wMDEgMjMuMDQ4NyAxMTcuNjkgMjQuMTQzNUMxMTguNCAyNS4yMzgzIDExOC43NTQgMjYuNTI1NiAxMTguNzU0IDI4LjAwNTZDMTE4Ljc1NCAyOS40NjUzIDExOC40IDMwLjc0MjUgMTE3LjY5IDMxLjgzNzNDMTE3LjAwMSAzMi45MzIxIDExNi4wNDggMzMuNzgzNiAxMTQuODMyIDM0LjM5MThDMTEzLjYzNSAzNSAxMTIuMjc3IDM1LjMwNDEgMTEwLjc1NyAzNS4zMDQxQzEwOS4yMzYgMzUuMzA0MSAxMDcuODY4IDM1IDEwNi42NTEgMzQuMzkxOEMxMDUuNDM1IDMzLjc4MzYgMTA0LjQ4MiAzMi45MzIxIDEwMy43OTMgMzEuODM3M0MxMDMuMTAzIDMwLjc0MjUgMTAyLjc1OSAyOS40NjUzIDEwMi43NTkgMjguMDA1NlpNMTA3LjQ3MiAyOC4wMDU2QzEwNy40NzIgMjguNzM1NSAxMDcuNjI0IDI5LjM2MzkgMTA3LjkyOCAyOS44OTExQzEwOC4yMzMgMzAuMzk3OSAxMDguNjI4IDMwLjc5MzIgMTA5LjExNCAzMS4wNzcxQzEwOS42MDEgMzEuMzYwOSAxMTAuMTQ4IDMxLjUwMjggMTEwLjc1NyAzMS41MDI4QzExMS4zNDQgMzEuNTAyOCAxMTEuODgyIDMxLjM2MDkgMTEyLjM2OCAzMS4wNzcxQzExMi44NzUgMzAuNzkzMiAxMTMuMjcgMzAuMzk3OSAxMTMuNTU0IDI5Ljg5MTFDMTEzLjg1OCAyOS4zNjM5IDExNC4wMSAyOC43MzU1IDExNC4wMSAyOC4wMDU2QzExNC4wMSAyNy4yNzU4IDExMy44NTggMjYuNjQ3MyAxMTMuNTU0IDI2LjEyMDJDMTEzLjI3IDI1LjU5MzEgMTEyLjg3NSAyNS4xODc2IDExMi4zNjggMjQuOTAzOEMxMTEuODgyIDI0LjYxOTkgMTExLjM0NCAyNC40NzggMTEwLjc1NyAyNC40NzhDMTEwLjE0OCAyNC40NzggMTA5LjYwMSAyNC42MTk5IDEwOS4xMTQgMjQuOTAzOEMxMDguNjI4IDI1LjE4NzYgMTA4LjIzMyAyNS41OTMxIDEwNy45MjggMjYuMTIwMkMxMDcuNjI0IDI2LjY0NzMgMTA3LjQ3MiAyNy4yNzU4IDEwNy40NzIgMjguMDA1NlpNMTI1LjM1IDI4LjAwNTZDMTI1LjM1IDI4Ljc1NTcgMTI1LjUxMiAyOS40MDQ1IDEyNS44MzYgMjkuOTUxOUMxMjYuMTYgMzAuNDc5IDEyNi42MDYgMzAuODk0NiAxMjcuMTc0IDMxLjE5ODdDMTI3Ljc2MiAzMS41MDI4IDEyOC4zOTEgMzEuNjU0OSAxMjkuMDYgMzEuNjU0OUMxMjkuNjI3IDMxLjY1NDkgMTMwLjE2NCAzMS41NzM4IDEzMC42NzEgMzEuNDExNkMxMzEuMTk4IDMxLjIyOTEgMTMxLjY3NSAzMC45ODU4IDEzMi4xMDEgMzAuNjgxN0MxMzIuNTQ3IDMwLjM3NzYgMTMyLjkxMiAzMC4wMDI2IDEzMy4xOTUgMjkuNTU2NVYzNC4wMjY5QzEzMi43MDkgMzQuNDEyMSAxMzIuMTAxIDM0LjcyNjMgMTMxLjM3MSAzNC45Njk2QzEzMC42NDEgMzUuMTkyNiAxMjkuNzQ5IDM1LjMwNDEgMTI4LjY5NSAzNS4zMDQxQzEyNy4xNTQgMzUuMzA0MSAxMjUuNzY1IDM1IDEyNC41MjggMzQuMzkxOEMxMjMuMzEyIDMzLjc4MzYgMTIyLjM0OSAzMi45MzIxIDEyMS42MzkgMzEuODM3M0MxMjAuOTUgMzAuNzQyNSAxMjAuNjA1IDI5LjQ2NTMgMTIwLjYwNSAyOC4wMDU2QzEyMC42MDUgMjYuNTI1NiAxMjAuOTUgMjUuMjQ4NCAxMjEuNjM5IDI0LjE3MzlDMTIyLjM0OSAyMy4wNzkxIDEyMy4zMTIgMjIuMjI3NiAxMjQuNTI4IDIxLjYxOTRDMTI1Ljc2NSAyMS4wMTEyIDEyNy4xNTQgMjAuNzA3MSAxMjguNjk1IDIwLjcwNzFDMTI5Ljc0OSAyMC43MDcxIDEzMC42NDEgMjAuODI4OCAxMzEuMzcxIDIxLjA3MkMxMzIuMTAxIDIxLjI5NTEgMTMyLjcwOSAyMS41Nzg5IDEzMy4xOTUgMjEuOTIzNVYyNi40MjQzQzEzMi45MTIgMjUuOTc4MyAxMzIuNTM2IDI1LjYwMzIgMTMyLjA3IDI1LjI5OTFDMTMxLjYyNCAyNC45OTUgMTMxLjEzOCAyNC43NjE4IDEzMC42MTEgMjQuNTk5NkMxMzAuMDgzIDI0LjQzNzUgMTI5LjU2NiAyNC4zNTY0IDEyOS4wNiAyNC4zNTY0QzEyOC4zOTEgMjQuMzU2NCAxMjcuNzYyIDI0LjUxODYgMTI3LjE3NCAyNC44NDI5QzEyNi42MDYgMjUuMTY3MyAxMjYuMTYgMjUuNjAzMiAxMjUuODM2IDI2LjE1MDZDMTI1LjUxMiAyNi42OTggMTI1LjM1IDI3LjMxNjMgMTI1LjM1IDI4LjAwNTZaTTEzNi40ODQgMTEuMjc5OUgxNDAuODkzVjM1SDEzNi40ODRWMTEuMjc5OVpNMTQ1Ljk3MiAyMS4wMTEySDE1MS40NDZMMTQ1LjQ4NSAyNi43ODkyTDE1Mi4wNTQgMzVIMTQ2LjY3MUwxMzkuOTgxIDI2Ljc4OTJMMTQ1Ljk3MiAyMS4wMTEyWk0xNjAuNzM2IDM1LjMwNDFDMTU5LjExNCAzNS4zMDQxIDE1Ny43MDUgMzUuMDEwMSAxNTYuNTA5IDM0LjQyMjJDMTU1LjMzMyAzMy44MTQgMTU0LjQyMSAzMi45NjI1IDE1My43NzIgMzEuODY3N0MxNTMuMTI0IDMwLjc3MyAxNTIuNzk5IDI5LjQ4NTYgMTUyLjc5OSAyOC4wMDU2QzE1Mi43OTkgMjYuNTA1NCAxNTMuMTEzIDI1LjIwNzkgMTUzLjc0MiAyNC4xMTMxQzE1NC4zNyAyMy4wMTgzIDE1NS4yNzMgMjIuMTc3IDE1Ni40NDggMjEuNTg5QzE1Ny42NDUgMjEuMDAxMSAxNTkuMDU0IDIwLjcwNzEgMTYwLjY3NSAyMC43MDcxQzE2Mi4yOTcgMjAuNzA3MSAxNjMuNjY2IDIwLjk5MSAxNjQuNzgxIDIxLjU1ODZDMTY1Ljg5NiAyMi4xMDYgMTY2Ljc0NyAyMi45MDY4IDE2Ny4zMzUgMjMuOTYxQzE2Ny45MjMgMjUuMDE1MyAxNjguMjE3IDI2LjI5MjUgMTY4LjIxNyAyNy43OTI3QzE2OC4yMTcgMjguMDE1NyAxNjguMjE3IDI4LjIzODggMTY4LjIxNyAyOC40NjE4QzE2OC4yMTcgMjguNjY0NSAxNjguMTk3IDI4LjgzNjggMTY4LjE1NiAyOC45Nzg3SDE1NS4zODRWMjYuNDI0M0gxNjQuMDIxTDE2Mi45MjYgMjcuODIzMUMxNjMuMDI3IDI3LjY4MTIgMTYzLjEwOCAyNy41MDg5IDE2My4xNjkgMjcuMzA2MkMxNjMuMjUgMjcuMDgzMiAxNjMuMjkxIDI2LjkwMDcgMTYzLjI5MSAyNi43NTg4QzE2My4yOTEgMjYuMTUwNiAxNjMuMTc5IDI1LjYyMzUgMTYyLjk1NiAyNS4xNzc0QzE2Mi43MzMgMjQuNzMxNCAxNjIuNDE5IDI0LjM4NjggMTYyLjAxMyAyNC4xNDM1QzE2MS42MDggMjMuOTAwMiAxNjEuMTMyIDIzLjc3ODYgMTYwLjU4NCAyMy43Nzg2QzE1OS44OTUgMjMuNzc4NiAxNTkuMzE3IDIzLjkzMDYgMTU4Ljg1MSAyNC4yMzQ3QzE1OC4zODUgMjQuNTM4OCAxNTguMDMgMjUuMDA1MSAxNTcuNzg2IDI1LjYzMzZDMTU3LjU2MyAyNi4yNDE4IDE1Ny40NDIgMjcuMDEyMiAxNTcuNDIyIDI3Ljk0NDhDMTU3LjQyMiAyOC43OTYzIDE1Ny41NDMgMjkuNTI2MSAxNTcuNzg2IDMwLjEzNDNDMTU4LjAzIDMwLjc0MjUgMTU4LjM5NSAzMS4yMDg4IDE1OC44ODEgMzEuNTMzMkMxNTkuMzY4IDMxLjgzNzMgMTU5Ljk2NiAzMS45ODk0IDE2MC42NzUgMzEuOTg5NEMxNjEuNDg2IDMxLjk4OTQgMTYyLjE3NiAzMS44MzczIDE2Mi43NDMgMzEuNTMzMkMxNjMuMzMxIDMxLjIyOTEgMTYzLjc5OCAzMC43NzMgMTY0LjE0MiAzMC4xNjQ3TDE2OC4yNDggMzEuMTY4M0MxNjcuNTE4IDMyLjU0NjkgMTY2LjUyNCAzMy41ODA4IDE2NS4yNjcgMzQuMjcwMkMxNjQuMDMxIDM0Ljk1OTUgMTYyLjUyIDM1LjMwNDEgMTYwLjczNiAzNS4zMDQxWk0xNjkuNDExIDIxLjAxMTJIMTc4Ljc3N1YyNC44MTI1SDE2OS40MTFWMjEuMDExMlpNMTcxLjg3NCAxNi4xNDU2SDE3Ni4yODNWMzVIMTcxLjg3NFYxNi4xNDU2WiIgZmlsbD0iYmxhY2siLz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNDY0XzI5NiI+CjxyZWN0IHdpZHRoPSIxMy4yNDE3IiBoZWlnaHQ9IjEzLjI0MTciIGZpbGw9IndoaXRlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4LjQ1NzUyIDIwLjc1KSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=" alt="BizPocket" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+      <span style="display:none;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;">BizPocket</span>
+    </div></a>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.bizpocket.app" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83 1-1.3 1.7-.8l15 8.5a1 1 0 0 1 0 1.6l-15 8.5C3.99 21.8 3 21.33 3 20.5Z"/></svg>
+      Download Free
+    </a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <h1>Contact & Support</h1>
+    <p>Have a question or running into an issue? We're here to help — usually within 24 hours.</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="content">
+  <div class="container">
+    <div class="content-grid">
+
+      <!-- Left: contact info cards -->
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div>
+            <h3>Email Support</h3>
+            <p>Send us your question and we'll get back to you as soon as possible.</p>
+            <a href="/cdn-cgi/l/email-protection#6e0c07141e010d050b1a400f1e1e2e09030f0702400d0103"><span class="__cf_email__" data-cfemail="66040f1c1609050d03124807161626010b070f0a4805090b">[email&#160;protected]</span></a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📱</div>
+          <div>
+            <h3>In-App Support</h3>
+            <p>Using the app? Go to <strong>Settings → Contact Support</strong> to send us a message directly from BizPocket.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">⭐</div>
+          <div>
+            <h3>Leave a Review</h3>
+            <p>Enjoying BizPocket? Your review on Google Play means the world to us and helps other business owners discover the app.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.bizpocket.app" target="_blank">Rate on Google Play</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📄</div>
+          <div>
+            <h3>Legal</h3>
+            <p>Read our policies before reaching out if your question is about data or account terms.</p>
+            <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: contact form -->
+      <div class="form-card">
+        <div id="form-content">
+          <h2>Send us a message</h2>
+          <p>Fill in the form and our team will respond within 24 hours.</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="fname" placeholder="Enter first name" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="lname" placeholder="Enter last name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="you@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Topic</label>
+            <select id="topic">
+              <option value="">Select a topic...</option>
+              <option>Account & Login</option>
+              <option>Billing & Subscription</option>
+              <option>Bug Report</option>
+              <option>Feature Request</option>
+              <option>Data & Backup</option>
+              <option>General Question</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="message" placeholder="Describe your issue or question in detail..."></textarea>
+          </div>
+          <button class="form-submit" id="submit-btn" onclick="handleSubmit()">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            Send Message
+          </button>
+        </div>
+        <div class="success-msg" id="success-msg">
+          <div class="checkmark">✓</div>
+          <h3>Message sent!</h3>
+          <p>Thanks for reaching out. We'll get back to you at your email address within 24 hours.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Is BizPocket really free?</h4>
+        <p>Yes! The Free plan includes all core features — sales, inventory, vendors, expenses, and reports — for 1 business, forever.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What does Pro include?</h4>
+        <p>Pro adds unlimited businesses (up to 99+), automatic cloud sync, encrypted cloud backup, and priority support. It comes with a 1-month free trial.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Does the app work offline?</h4>
+        <p>Absolutely. BizPocket is offline-first — all your data is stored locally and syncs to the cloud when you're connected (Pro only).</p>
+      </div>
+      <div class="faq-item">
+        <h4>How is my data protected?</h4>
+        <p>Your local database is encrypted with SQLCipher. Cloud backups are also encrypted. We never sell your data.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I export my data?</h4>
+        <p>Yes — all reports can be exported to PDF or Excel directly from the app. You can also export your full data as a backup file.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Which languages are supported?</h4>
+        <p>BizPocket supports English, Urdu, Arabic, and Hindi — with full RTL (right-to-left) support for Urdu and Arabic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="images/logo.svg" alt="BizPocket" onerror="this.style.display='none'" />
+      </div>
+      <span>© 2025 Klynco. All rights reserved.</span>
+      <span>
+        <a href="privacy.html" style="color:inherit;margin-right:16px;">Privacy Policy</a>
+        <a href="terms.html" style="color:inherit;">Terms of Service</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  async function handleSubmit() {
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const topic = document.getElementById('topic').value;
+    const message = document.getElementById('message').value.trim();
+
+    const errEl = document.getElementById('form-error');
+    if (errEl) errEl.style.display = 'none';
+
+    if (!fname || !email || !topic || !message) {
+      showError('Please fill in all required fields.'); return;
+    }
+    if (!email.includes('@')) {
+      showError('Please enter a valid email address.'); return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = 'Sending...';
+
+    const formData = new FormData();
+    formData.append('name', fname + ' ' + lname);
+    formData.append('email', email);
+    formData.append('topic', topic);
+    formData.append('message', message);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xreoabde', {
+        method: 'POST', body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-content').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        const data = await res.json();
+        const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
+        showError(msg);
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message';
+      }
+    } catch(e) {
+      showError('Network error. Please check your connection.');
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message';
+    }
+  }
+
+  function showError(msg) {
+    let el = document.getElementById('form-error');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'form-error';
+      el.style.cssText = 'background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;border-radius:10px;padding:12px 16px;font-size:.85rem;margin-bottom:16px;';
+      document.getElementById('submit-btn').before(el);
+    }
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+</script>
+</body>
+</html>
