@@ -1,77 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – BizPocket</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Support – BizPocket</title>
+  <meta name="description" content="Get in touch with the BizPocket team. We're here to help with any questions about your account, billing, or the app." />
   <link rel="icon" type="image/png" href="images/app_icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --black:#1A1A1A; --bg:#F8F9FA; --surface:#FFFFFF; --muted:#6B7280; --border:#E5E7EB; --success:#4CAF50; --radius:14px; --shadow:0 4px 32px rgba(26,26,26,.10); --shadow-md:0 8px 48px rgba(26,26,26,.14); }
+    :root {
+      --black:   #1A1A1A;
+      --bg:      #F8F9FA;
+      --surface: #FFFFFF;
+      --muted:   #6B7280;
+      --border:  #E5E7EB;
+      --success: #4CAF50;
+      --radius:  14px;
+      --shadow:  0 4px 32px rgba(26,26,26,.10);
+      --shadow-md: 0 8px 48px rgba(26,26,26,.14);
+    }
     html { scroll-behavior: smooth; }
-    body { font-family:'Open Sans',sans-serif; background:var(--bg); color:var(--black); line-height:1.7; }
-    h1,h2,h3,h4 { font-family:'Outfit',sans-serif; line-height:1.2; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:900px; margin:0 auto; padding:0 24px; }
-    nav { position:fixed; top:0; left:0; right:0; z-index:999; padding:0 24px; background:rgba(26,26,26,.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.07); }
-    .nav-inner { max-width:1140px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:64px; }
-    .nav-logo { display:flex; align-items:center; gap:10px; }
-    .nav-logo img { height:34px; width:auto; filter:invert(1) brightness(2); }
-    .nav-logo-text { font-family:'Outfit',sans-serif; font-weight:800; font-size:1.1rem; color:#fff; }
-    .nav-back { display:inline-flex; align-items:center; gap:8px; color:rgba(255,255,255,.7); font-family:'Outfit',sans-serif; font-weight:500; font-size:.9rem; transition:color .2s; }
-    .nav-back:hover { color:#fff; }
-    .nav-cta { background:#fff; color:#1A1A1A; font-family:'Outfit',sans-serif; font-weight:700; font-size:.88rem; padding:9px 22px; border-radius:10px; border:2px solid #fff; display:inline-flex; align-items:center; gap:7px; transition:background .2s,color .2s,transform .15s,box-shadow .25s; box-shadow:0 2px 12px rgba(255,255,255,.15); }
-    .nav-cta:hover { background:transparent; color:#fff; transform:translateY(-2px); box-shadow:0 0 20px rgba(255,255,255,.2); }
-    .page-hero { background:var(--black); padding:130px 0 70px; text-align:center; position:relative; overflow:hidden; }
-    .page-hero::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:500px; height:500px; background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 65%); }
-    .page-hero .tag { display:inline-block; background:rgba(255,255,255,.1); color:rgba(255,255,255,.7); font-family:'Outfit',sans-serif; font-weight:600; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:100px; border:1px solid rgba(255,255,255,.15); margin-bottom:18px; }
-    .page-hero h1 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; color:#fff; margin-bottom:12px; letter-spacing:-.02em; }
-    .page-hero p { font-size:.95rem; color:rgba(255,255,255,.5); }
-    /* TOC */
-    .toc-bar { background:var(--surface); border-bottom:1px solid var(--border); padding:0; position:sticky; top:64px; z-index:99; overflow-x:auto; white-space:nowrap; scrollbar-width:none; }
-    .toc-bar::-webkit-scrollbar { display:none; }
-    .toc-inner { display:inline-flex; gap:0; padding:0 24px; max-width:900px; margin:0 auto; }
-    .toc-inner a { display:inline-block; font-family:'Outfit',sans-serif; font-size:.78rem; font-weight:600; color:var(--muted); padding:13px 14px; border-bottom:2px solid transparent; transition:color .2s,border-color .2s; white-space:nowrap; }
-    .toc-inner a:hover { color:var(--black); border-color:var(--black); }
-    .toc-inner a.toc-active { color:var(--black) !important; border-bottom:2px solid var(--black) !important; font-weight:700; }
-    .doc-body { padding:60px 0 100px; }
-    .doc-card { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:52px 52px; box-shadow:var(--shadow); }
-    .effective { display:inline-flex; align-items:center; gap:8px; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px 16px; font-size:.82rem; color:var(--muted); font-family:'Outfit',sans-serif; font-weight:500; margin-bottom:36px; }
-    .doc-section { margin-bottom:44px; padding-bottom:44px; border-bottom:1px solid var(--border); scroll-margin-top:130px; }
-    .doc-section:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
-    .doc-section h2 { font-family:'Outfit',sans-serif; font-weight:800; font-size:1.1rem; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
-    .doc-section h2 .num { background:var(--black); color:#fff; font-size:.7rem; font-weight:700; padding:3px 9px; border-radius:6px; font-family:'Outfit',sans-serif; letter-spacing:.04em; }
-    .doc-section h3 { font-family:'Outfit',sans-serif; font-weight:700; font-size:.92rem; margin:16px 0 6px; color:var(--black); }
-    .doc-section p { font-size:.9rem; color:#444; margin-bottom:12px; line-height:1.85; }
-    .doc-section p:last-child { margin-bottom:0; }
-    .doc-section ul { list-style:none; display:flex; flex-direction:column; gap:8px; margin:10px 0 14px; }
-    .doc-section ul li { font-size:.9rem; color:#444; padding-left:20px; position:relative; line-height:1.8; }
-    .doc-section ul li::before { content:'–'; position:absolute; left:0; color:var(--muted); }
-    .security-badges { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
-    .badge { display:inline-flex; align-items:center; gap:7px; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:7px 14px; font-size:.8rem; font-family:'Outfit',sans-serif; font-weight:600; color:var(--black); }
-    .badge::before { content:'✓'; color:var(--success); font-weight:800; }
-    .note-box { background:#FFFBF0; border:1px solid #F5E6A3; border-radius:10px; padding:14px 16px; margin:14px 0; font-size:.85rem; color:#6B5500; line-height:1.75; }
-    .note-box strong { color:#4A3800; }
-    .rights-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:16px 0; }
-    .right-item { background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
-    .right-item h4 { font-family:'Outfit',sans-serif; font-weight:700; font-size:.85rem; margin-bottom:4px; }
-    .right-item p { font-size:.82rem; color:var(--muted); margin:0; }
-    .contact-box { background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-top:12px; }
-    .contact-box p { font-size:.88rem; color:var(--muted); margin:0; }
-    .contact-box a { color:var(--black); font-weight:600; border-bottom:1.5px solid var(--black); }
-    footer { background:#111; color:rgba(255,255,255,.45); padding:32px 0; }
-    .footer-inner { max-width:1140px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-    .footer-logo img { height:26px; filter:invert(1) brightness(2); }
-    .footer-links { display:flex; gap:20px; }
-    .footer-links a { font-size:.8rem; transition:color .2s; }
-    .footer-links a:hover { color:rgba(255,255,255,.8); }
-    @media(max-width:640px) { .doc-card { padding:28px 18px; } .rights-grid { grid-template-columns:1fr; } }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--bg);
+      color: var(--black);
+      line-height: 1.65;
+    }
+    h1,h2,h3,h4 { font-family: 'Outfit', sans-serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      padding: 0 24px;
+      background: rgba(26,26,26,.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .nav-inner {
+      max-width: 1140px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { height: 34px; width: auto; filter: invert(1) brightness(2); }
+    .nav-logo span { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.7); font-family: 'Outfit', sans-serif;
+      font-weight: 500; font-size: .9rem; transition: color .2s;
+    }
+    .nav-back:hover { color: #fff; }
+    .nav-cta {
+      background: #fff; color: #1A1A1A;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .88rem;
+      padding: 9px 22px; border-radius: 10px; border: 2px solid #fff;
+      display: inline-flex; align-items: center; gap: 7px;
+      transition: background .2s, color .2s, transform .15s, box-shadow .25s;
+      box-shadow: 0 2px 12px rgba(255,255,255,.15);
+    }
+    .nav-cta:hover { background: transparent; color: #fff; transform: translateY(-2px); box-shadow: 0 0 20px rgba(255,255,255,.2); }
+
+    /* HERO */
+    .page-hero {
+      background: var(--black); padding: 140px 0 80px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+      color: #fff; margin-bottom: 14px; letter-spacing: -.02em;
+    }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.55); max-width: 480px; margin: 0 auto; }
+
+    /* MAIN CONTENT */
+    .content { padding: 80px 0 100px; }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start;
+    }
+
+    /* CONTACT CARDS */
+    .contact-cards { display: flex; flex-direction: column; gap: 16px; }
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 22px;
+      display: flex; align-items: flex-start; gap: 16px;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .contact-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .contact-card-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(0,0,0,.06); display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; flex-shrink: 0;
+    }
+    .contact-card h3 {
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .95rem;
+      margin-bottom: 4px;
+    }
+    .contact-card p { font-size: .83rem; color: var(--muted); line-height: 1.6; }
+    .contact-card a { color: var(--black); font-weight: 600; font-size: .88rem; margin-top: 6px; display: inline-block; border-bottom: 1.5px solid var(--black); transition: opacity .2s; }
+    .contact-card a:hover { opacity: .6; }
+
+    /* FORM */
+    .form-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 36px;
+      box-shadow: var(--shadow);
+    }
+    .form-card h2 {
+      font-family: 'Outfit', sans-serif; font-weight: 800;
+      font-size: 1.5rem; margin-bottom: 6px;
+    }
+    .form-card > p { font-size: .88rem; color: var(--muted); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; }
+    .form-group label {
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: .82rem;
+      color: var(--black); letter-spacing: .02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Open Sans', sans-serif; font-size: .9rem;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 11px 14px; background: var(--bg); color: var(--black);
+      transition: border-color .2s, box-shadow .2s; outline: none;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--black); box-shadow: 0 0 0 3px rgba(26,26,26,.08);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { cursor: pointer; }
+    .form-submit {
+      width: 100%; background: var(--black); color: #fff;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem;
+      padding: 14px; border-radius: 12px; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+      margin-top: 4px;
+    }
+    .form-submit:hover { background: #333; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.22); }
+    .form-submit:active { transform: translateY(0); }
+
+    /* Success message */
+    .success-msg {
+      display: none; text-align: center; padding: 32px 20px;
+    }
+    .success-msg .checkmark {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(76,175,80,.12); color: var(--success);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin: 0 auto 16px;
+    }
+    .success-msg h3 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; margin-bottom: 8px; }
+    .success-msg p { font-size: .88rem; color: var(--muted); }
+
+    /* FAQ */
+    .faq { padding: 0 0 100px; }
+    .faq-title {
+      font-family: 'Outfit', sans-serif; font-weight: 800;
+      font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -.02em;
+      margin-bottom: 36px; text-align: center;
+    }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 860px; margin: 0 auto; }
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 20px;
+      transition: box-shadow .2s;
+    }
+    .faq-item:hover { box-shadow: var(--shadow); }
+    .faq-item h4 {
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .93rem;
+      margin-bottom: 8px;
+    }
+    .faq-item p { font-size: .84rem; color: var(--muted); line-height: 1.7; }
+
+    /* FOOTER */
+    footer { background: #111; color: rgba(255,255,255,.45); padding: 40px 0 28px; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom span { font-size: .8rem; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo img { height: 28px; filter: invert(1) brightness(2); }
+
+    @media (max-width: 860px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+    }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="bizpocket.html" style="text-decoration:none;"><div class="nav-logo">
@@ -85,157 +224,100 @@
   </div>
 </nav>
 
+<!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container" style="position:relative;z-index:1;">
-    <div class="tag">Legal</div>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: March 25, 2026</p>
+    <h1>Contact & Support</h1>
+    <p>Have a question or running into an issue? We're here to help — usually within 24 hours.</p>
   </div>
 </div>
 
-<div class="toc-bar">
-  <div class="toc-inner">
-    <a href="#s1">Introduction</a>
-    <a href="#s2">Data We Collect</a>
-    <a href="#s3">How We Use It</a>
-    <a href="#s4">Security</a>
-    <a href="#s5">Data Sharing</a>
-    <a href="#s6">Retention</a>
-    <a href="#s7">Your Rights</a>
-    <a href="#s8">Third Parties</a>
-    <a href="#s9">Children</a>
-    <a href="#s10">Governing Law</a>
-    <a href="#s11">Changes</a>
-    <a href="#s12">Contact</a>
-  </div>
-</div>
-
-<section class="doc-body">
+<!-- MAIN CONTENT -->
+<section class="content">
   <div class="container">
-    <div class="doc-card">
-      <div class="effective">
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        Effective Date: March 25, 2026
-      </div>
+    <div class="content-grid">
 
-      <div class="doc-section" id="s1">
-        <h2><span class="num">INTRO</span> Introduction</h2>
-        <p>BizPocket ("we", "us", or "our") is the mobile application described in this Privacy Policy. This Policy explains how we collect, use, disclose, and protect your information when you use the BizPocket app.</p>
-        <p>By accessing or using the App, you agree to the terms of this Privacy Policy. If you do not agree, please discontinue use of the App immediately. We are committed to protecting your personal and business data with the highest standards of security and transparency.</p>
-      </div>
-
-      <div class="doc-section" id="s2">
-        <h2><span class="num">01</span> Information We Collect</h2>
-        <h3>Account Information</h3>
-        <p>When you register an account, we collect your full name, email address, phone number, and business name. This information is required to create and manage your BizPocket account and to enable core app features.</p>
-        <h3>Business Data</h3>
-        <p>BizPocket allows you to manage your business operations. This includes sales records, invoices, inventory items, stock quantities, expenses, vendor transactions, purchase records, profit and loss summaries, and financial account entries. This data is created entirely by you and stored locally on your device. Pro subscribers may additionally sync this data to our secure cloud servers via the backup feature.</p>
-        <h3>Usage & Diagnostic Data</h3>
-        <p>We automatically collect certain device and usage information to help improve the App. This includes device type, operating system version, app version, crash logs, and general usage statistics. This data is collected in aggregate and is not linked to your personal identity.</p>
-        <h3>Subscription & Payment Data</h3>
-        <p>When you subscribe to BizPocket Pro, all payment processing is handled entirely by Google Play Billing. We do not collect, process, or store your credit card, bank account, or any other payment details. We receive only a transaction confirmation, subscription status, and billing period from Google Play to manage your access to Pro features.</p>
-      </div>
-
-      <div class="doc-section" id="s3">
-        <h2><span class="num">02</span> How We Use Your Information</h2>
-        <p>We use the information we collect solely for the following purposes:</p>
-        <ul>
-          <li>To create and manage your BizPocket account</li>
-          <li>To provide, maintain, and improve the App and its features</li>
-          <li>To store and process your business data securely on-device and in the cloud (Pro)</li>
-          <li>To enable cloud backup, sync, and restore functionality for Pro subscribers</li>
-          <li>To send important service-related notifications and account alerts</li>
-          <li>To respond to your support enquiries and customer service requests</li>
-          <li>To detect, prevent, and address technical issues and app crashes</li>
-          <li>To comply with applicable legal obligations</li>
-        </ul>
-        <p>We never use your data for advertising. Your business data is never sold, rented, or used to serve you advertisements — by us or any third party.</p>
-      </div>
-
-      <div class="doc-section" id="s4">
-        <h2><span class="num">03</span> Data Storage & Security</h2>
-        <p>Your business data is primarily stored locally on your device using encrypted local databases. The App is designed to work fully offline — no internet connection is required for any core feature.</p>
-        <p>If you enable the cloud backup feature (BizPocket Pro), your data is encrypted in transit using TLS (Transport Layer Security) and encrypted at rest using AES-256 encryption on our secure cloud infrastructure. We conduct regular security audits to protect your data against unauthorised access, alteration, or destruction.</p>
-        <div class="security-badges">
-          <span class="badge">AES-256 at Rest</span>
-          <span class="badge">TLS in Transit</span>
-          <span class="badge">100% Offline Capable</span>
-          <span class="badge">Encrypted Local Database</span>
-          <span class="badge">Regular Security Audits</span>
+      <!-- Left: contact info cards -->
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div>
+            <h3>Email Support</h3>
+            <p>Send us your question and we'll get back to you as soon as possible.</p>
+            <span id="em_contact1"></span><script>(function(){var e="bizpocket"+"."+"app"+"@"+"gmail"+"."+"com";document.getElementById("em_contact1").innerHTML='<a href="mailto:'+e+'">'+e+'</a>';})();</script>
+          </div>
         </div>
-        <div class="note-box"><strong>Note:</strong> No method of electronic storage or internet transmission is 100% secure. While we implement industry-standard measures, we cannot guarantee absolute security. We encourage you to protect your device with a strong password or biometric lock.</div>
-        <p>Data breach notification: In the event of a breach affecting your personal data, we will notify you via your registered email address within 72 hours of becoming aware of the incident.</p>
-      </div>
-
-      <div class="doc-section" id="s5">
-        <h2><span class="num">04</span> Data Sharing & Disclosure</h2>
-        <p>We do not sell, trade, or rent your personal information or business data to any third party. We may share your information only in the following strictly limited circumstances:</p>
-        <ul>
-          <li><strong>Service Providers:</strong> We work with trusted third-party providers (such as cloud hosting and crash analytics services) bound by strict confidentiality agreements and prohibited from using your data for any other purpose.</li>
-          <li><strong>Legal Requirements:</strong> We may disclose your information if required by applicable law, regulation, court order, or governmental authority.</li>
-          <li><strong>Safety & Rights Protection:</strong> We may disclose information to protect the rights, safety, or property of BizPocket, our users, or the public where required or permitted by law.</li>
-          <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or asset sale, you will be notified in advance and your data will remain subject to this Privacy Policy.</li>
-        </ul>
-      </div>
-
-      <div class="doc-section" id="s6">
-        <h2><span class="num">05</span> Data Retention</h2>
-        <p>We retain your personal information and business data for as long as your account remains active or as needed to provide our services.</p>
-        <ul>
-          <li><strong>Account Deletion:</strong> If you delete your account, your personal data and cloud-stored business data will be permanently removed from our servers within 30 days, except where retention is required by law.</li>
-          <li><strong>Pro Subscription Cancellation:</strong> If you cancel BizPocket Pro without deleting your account, your cloud backup data is retained for 30 days to allow re-subscription or data export, then permanently deleted. Your local device data is not affected.</li>
-          <li><strong>Local Data:</strong> Business data stored on your device remains under your full control. Uninstalling the App removes all locally stored data. We recommend exporting your data before uninstalling.</li>
-        </ul>
-      </div>
-
-      <div class="doc-section" id="s7">
-        <h2><span class="num">06</span> Your Rights</h2>
-        <p>Depending on your jurisdiction, you have the following rights regarding your personal data. To exercise any of these rights, contact us at <span id="em_privacy1"></span><script>(function(){var e="bizpocket"+"."+"app"+"@"+"gmail"+"."+"com";document.getElementById("em_privacy1").innerHTML='<a href="mailto:'+e+'">'+e+'</a>';})();</script>.</p>
-        <div class="rights-grid">
-          <div class="right-item"><h4>Access</h4><p>Request a copy of all personal data we hold about you.</p></div>
-          <div class="right-item"><h4>Correction</h4><p>Request correction of inaccurate or incomplete personal data.</p></div>
-          <div class="right-item"><h4>Deletion</h4><p>Request permanent deletion of your account and all associated data.</p></div>
-          <div class="right-item"><h4>Data Export</h4><p>Request a portable copy of your business data in a standard format.</p></div>
-          <div class="right-item"><h4>Restriction</h4><p>Request that we limit processing of your data in certain circumstances.</p></div>
-          <div class="right-item"><h4>Objection</h4><p>Object to processing of your data where we rely on legitimate interests.</p></div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📱</div>
+          <div>
+            <h3>In-App Support</h3>
+            <p>Using the app? Go to <strong>Settings → Contact Support</strong> to send us a message directly from BizPocket.</p>
+          </div>
         </div>
-        <p>We will respond to all rights requests within 30 days of receipt. No request will go unanswered.</p>
+        <div class="contact-card">
+          <div class="contact-card-icon">⭐</div>
+          <div>
+            <h3>Leave a Review</h3>
+            <p>Enjoying BizPocket? Your review on Google Play means the world to us and helps other business owners discover the app.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.bizpocket.app" target="_blank">Rate on Google Play</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📄</div>
+          <div>
+            <h3>Legal</h3>
+            <p>Read our policies before reaching out if your question is about data or account terms.</p>
+            <a href="https://bizpocket.github.io/bizpocket-app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+            <a href="https://bizpocket.github.io/bizpocket-app/terms.html">Terms of Service</a>
+          </div>
+        </div>
       </div>
 
-      <div class="doc-section" id="s8">
-        <h2><span class="num">07</span> Third-Party Services</h2>
-        <p>The App may use third-party services to support core functionality, including cloud infrastructure, crash reporting, and subscription management. These services operate under their own privacy policies. We encourage you to review the privacy policy of any third-party service you interact with through the App.</p>
-        <p>All subscription and payment transactions are governed by Google Play's Privacy Policy. BizPocket does not collect or process any payment information directly.</p>
-      </div>
-
-      <div class="doc-section" id="s9">
-        <h2><span class="num">08</span> Children's Privacy</h2>
-        <p>BizPocket is a business management application intended for individuals aged 13 and older. The App is not directed at children under the age of 13, and we do not knowingly collect personal information from children under 13.</p>
-        <p>If we become aware that we have inadvertently collected personal data from a child under 13, we will take immediate steps to delete that information. If you believe your child has provided us with personal information, please contact us at <span id="em_privacy2"></span><script>(function(){var e="bizpocket"+"."+"app"+"@"+"gmail"+"."+"com";document.getElementById("em_privacy2").innerHTML='<a href="mailto:'+e+'">'+e+'</a>';})();</script> and we will act promptly.</p>
-      </div>
-
-      <div class="doc-section" id="s10">
-        <h2><span class="num">09</span> Governing Law</h2>
-        <p>This Privacy Policy is governed by and construed in accordance with the laws of the Islamic Republic of Pakistan. Any disputes arising in connection with this Privacy Policy shall be subject to the exclusive jurisdiction of the courts of Pakistan.</p>
-        <p>If you access BizPocket from outside Pakistan, you do so voluntarily and are responsible for compliance with local laws applicable to you. Where international data protection laws such as GDPR apply, we are committed to meeting those standards as well.</p>
-      </div>
-
-      <div class="doc-section" id="s11">
-        <h2><span class="num">10</span> Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or App features. When we make material changes, we will:</p>
-        <ul>
-          <li>Update the "Last updated" date at the top of this page</li>
-          <li>Post a notice within the App notifying you of the changes</li>
-          <li>Send an email notification to your registered email address for significant changes</li>
-        </ul>
-        <p>Your continued use of the App after any changes constitutes your acceptance of the updated terms. We encourage you to review this Policy periodically.</p>
-      </div>
-
-      <div class="doc-section" id="s12">
-        <h2><span class="num">11</span> Contact Us</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, we aim to respond within 2 business days.</p>
-        <div class="contact-box">
-          <p>✉ &nbsp;<span id="em_privacy3"></span><script>(function(){var e="bizpocket"+"."+"app"+"@"+"gmail"+"."+"com";document.getElementById("em_privacy3").innerHTML='<a href="mailto:'+e+'">'+e+'</a>';})();</script></p>
+      <!-- Right: contact form -->
+      <div class="form-card">
+        <div id="form-content">
+          <h2>Send us a message</h2>
+          <p>Fill in the form and our team will respond within 24 hours.</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="fname" placeholder="Enter first name" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="lname" placeholder="Enter last name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="you@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Topic</label>
+            <select id="topic">
+              <option value="">Select a topic...</option>
+              <option>Account & Login</option>
+              <option>Billing & Subscription</option>
+              <option>Bug Report</option>
+              <option>Feature Request</option>
+              <option>Data & Backup</option>
+              <option>General Question</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea id="message" placeholder="Describe your issue or question in detail..."></textarea>
+          </div>
+          <button class="form-submit" id="submit-btn" onclick="handleSubmit()">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            Send Message
+          </button>
+        </div>
+        <div class="success-msg" id="success-msg">
+          <div class="checkmark">✓</div>
+          <h3>Message sent!</h3>
+          <p>Thanks for reaching out. We'll get back to you at your email address within 24 hours.</p>
         </div>
       </div>
 
@@ -243,40 +325,116 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Is BizPocket really free?</h4>
+        <p>Yes! The Free plan includes all core features — sales, inventory, vendors, expenses, and reports — for 1 business, forever.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What does Pro include?</h4>
+        <p>Pro adds unlimited businesses (up to 99+), automatic cloud sync, encrypted cloud backup, and priority support. It comes with a 1-month free trial.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Does the app work offline?</h4>
+        <p>Absolutely. BizPocket is offline-first — all your data is stored locally and syncs to the cloud when you're connected (Pro only).</p>
+      </div>
+      <div class="faq-item">
+        <h4>How is my data protected?</h4>
+        <p>Your local database is encrypted with SQLCipher. Cloud backups are also encrypted. We never sell your data.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I export my data?</h4>
+        <p>Yes — all reports can be exported to PDF or Excel directly from the app. You can also export your full data as a backup file.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Which languages are supported?</h4>
+        <p>BizPocket supports English, Urdu, Arabic, and Hindi — with full RTL (right-to-left) support for Urdu and Arabic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo"><img src="images/logo.svg" alt="BizPocket" onerror="this.style.display='none'" /></div>
-    <span style="font-size:.8rem;">© 2025 Klynco. All rights reserved.</span>
-    <div class="footer-links">
-      <a href="https://bizpocket.github.io/bizpocket-app/privacy.html">Privacy Policy</a>
-      <a href="https://bizpocket.github.io/bizpocket-app/terms.html">Terms of Service</a>
-      <a href="https://bizpocket.github.io/bizpocket-app/contact-us.html">Contact</a>
+  <div class="container">
+    <div class="footer-bottom">
+      <div class="footer-logo">
+        <img src="images/logo.svg" alt="BizPocket" onerror="this.style.display='none'" />
+      </div>
+      <span>© 2025 Klynco. All rights reserved.</span>
+      <span>
+        <a href="https://bizpocket.github.io/bizpocket-app/privacy.html" style="color:inherit;margin-right:16px;">Privacy Policy</a>
+        <a href="https://bizpocket.github.io/bizpocket-app/terms.html" style="color:inherit;">Terms of Service</a>
+      </span>
     </div>
   </div>
 </footer>
 
-<script>
-  (function() {
-    const links = document.querySelectorAll('.toc-inner a');
-    const sections = Array.from(links).map(a => document.getElementById(a.getAttribute('href').replace('#','')));
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  async function handleSubmit() {
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const topic = document.getElementById('topic').value;
+    const message = document.getElementById('message').value.trim();
 
-    function setActive() {
-      let current = null;
-      sections.forEach(function(sec) {
-        if (sec && sec.getBoundingClientRect().top <= 150) current = sec;
-      });
-      links.forEach(function(a) {
-        a.classList.remove('toc-active');
-        if (current && a.getAttribute('href') === '#' + current.id) {
-          a.classList.add('toc-active');
-          a.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-        }
-      });
+    const errEl = document.getElementById('form-error');
+    if (errEl) errEl.style.display = 'none';
+
+    if (!fname || !email || !topic || !message) {
+      showError('Please fill in all required fields.'); return;
+    }
+    if (!email.includes('@')) {
+      showError('Please enter a valid email address.'); return;
     }
 
-    window.addEventListener('scroll', setActive, { passive: true });
-    setActive();
-  })();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = 'Sending...';
+
+    const formData = new FormData();
+    formData.append('name', fname + ' ' + lname);
+    formData.append('email', email);
+    formData.append('topic', topic);
+    formData.append('message', message);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xreoabde', {
+        method: 'POST', body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-content').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        const data = await res.json();
+        const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
+        showError(msg);
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message';
+      }
+    } catch(e) {
+      showError('Network error. Please check your connection.');
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message';
+    }
+  }
+
+  function showError(msg) {
+    let el = document.getElementById('form-error');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'form-error';
+      el.style.cssText = 'background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;border-radius:10px;padding:12px 16px;font-size:.85rem;margin-bottom:16px;';
+      document.getElementById('submit-btn').before(el);
+    }
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
 </script>
 </body>
 </html>
