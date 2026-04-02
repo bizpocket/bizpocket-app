@@ -6,7 +6,7 @@ BizPocket – Business Manager app.
 
 | Page | URL |
 |------|-----|
-| Landing Page | https://bizpocket.github.io/bizpocket-app/index.html |
+| Landing Page | https://bizpocket.github.io/bizpocket-app/bizpocket.html |
 | Privacy Policy | https://bizpocket.github.io/bizpocket-app/privacy.html |
 | Terms & Conditions | https://bizpocket.github.io/bizpocket-app/terms.html |
 | Contact & Support | https://bizpocket.github.io/bizpocket-app/contact-us.html |
