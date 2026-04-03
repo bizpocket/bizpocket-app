@@ -84,18 +84,18 @@
     .nav-links a:hover { color: #fff; }
     .nav-cta {
       background: #fff; color: #1A1A1A;
-      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .88rem;
-      padding: 9px 22px; border-radius: 10px;
-      border: 2px solid #fff;
-      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .76rem;
+      padding: 6px 14px; border-radius: 8px;
+      border: 1.5px solid rgba(255,255,255,.9);
+      display: inline-flex; align-items: center; gap: 5px;
       letter-spacing: .01em;
       transition: background .2s, color .2s, transform .15s, box-shadow .25s;
-      box-shadow: 0 2px 12px rgba(255,255,255,.15);
+      box-shadow: 0 2px 8px rgba(255,255,255,.1);
     }
     .nav-cta:hover {
       background: transparent; color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 0 20px rgba(255,255,255,.2), 0 4px 16px rgba(0,0,0,.3);
+      transform: translateY(-1px);
+      box-shadow: 0 0 12px rgba(255,255,255,.14);
     }
 
     /* ─── HERO ──────────────────────────────────────── */
@@ -148,13 +148,13 @@
     .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 10px;
-      background: var(--brown); color: #fff;
+      background: #fff; color: #1A1A1A;
       font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem;
       padding: 14px 28px; border-radius: 12px;
       transition: background .2s, transform .15s, box-shadow .2s;
-      box-shadow: 0 4px 20px rgba(0,0,0,.35);
+      box-shadow: 0 4px 20px rgba(255,255,255,.25);
     }
-    .btn-primary:hover { background: var(--brown-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.45); }
+    .btn-primary:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,255,255,.3); }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       color: rgba(255,255,255,.75); font-family: 'Outfit', sans-serif;
@@ -431,16 +431,17 @@
     .dl-bg h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 14px; }
     .dl-bg p { color: rgba(255,255,255,.55); font-size: 1.05rem; margin-bottom: 40px; }
     .gplay-btn {
-      display: inline-flex; align-items: center; gap: 14px;
-      background: #fff; color: var(--black);
+      display: inline-flex !important; align-items: center; gap: 14px;
+      background: #FFFFFF !important; color: #1A1A1A !important;
       padding: 14px 28px; border-radius: 14px;
-      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem;
+      border: 3px solid #FFFFFF !important;
       transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 4px 20px rgba(0,0,0,.25);
+      box-shadow: 0 4px 32px rgba(255,255,255,.35);
     }
-    .gplay-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,.35); }
+    .gplay-btn:hover { transform: translateY(-3px); background: #f0f0f0; box-shadow: 0 8px 32px rgba(255,255,255,.2), 0 4px 16px rgba(0,0,0,.3); }
     .gplay-btn svg { flex-shrink: 0; }
-    .gplay-btn-text small { display: block; font-weight: 400; font-size: .72rem; color: var(--muted); }
+    .gplay-btn-text small { display: block; font-weight: 500; font-size: .68rem; color: #666; letter-spacing: .06em; text-transform: uppercase; }
+    .gplay-btn-text strong { display: block; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .95rem; color: #1A1A1A; }
 
     /* ─── FOOTER ────────────────────────────────────── */
     footer {
@@ -534,15 +535,12 @@
   <div class="container">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge fade-up">
-          <span><span class="dot"></span> Now Available on Google Play</span>
-        </div>
         <h1 class="fade-up delay-1">Your entire business,<br /><span>in your pocket.</span></h1>
         <p class="hero-sub fade-up delay-2">BizPocket replaces your spreadsheets and paper registers with one powerful app — manage sales, inventory, vendors, expenses & reports effortlessly.</p>
         <div class="hero-actions fade-up delay-3">
           <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.bizpocket.app" target="_blank">
             <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.83 1-1.3 1.7-.8l15 8.5a1 1 0 0 1 0 1.6l-15 8.5C3.99 21.8 3 21.33 3 20.5Z" fill="currentColor"/></svg>
-            Get it on Google Play
+            Google Play
           </a>
           <a class="btn-ghost" href="#features">
             See all features
@@ -796,7 +794,7 @@
       <div class="plan-card">
         <div class="plan-name">Free</div>
         <p style="font-size:.85rem;color:var(--muted);">Everything you need to run one business</p>
-        <div class="plan-price">$0 <sub>/ forever</sub></div>
+        <div class="plan-price">₹0 <sub>/ forever</sub></div>
         <ul class="plan-features">
           <li><span class="chk">✓</span> 1 business</li>
           <li><span class="chk">✓</span> Sales Management</li>
@@ -870,16 +868,16 @@
   <div class="container" style="position:relative;z-index:1;">
     <h2>Ready to take control<br />of your business?</h2>
     <p>Join thousands of shopkeepers and business owners already using BizPocket.<br />Free to download, free to start — upgrade when you need more.</p>
-    <a class="gplay-btn" href="https://play.google.com/store/apps/details?id=com.bizpocket.app" target="_blank">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path d="M3.18 23.76A2 2 0 0 1 2 22V2c0-.77.45-1.44 1.18-1.76L14 12 3.18 23.76Z" fill="#4CAF50"/>
+    <a class="gplay-btn" style="background:#fff !important;border:2px solid #fff;color:#1A1A1A !important;box-shadow:0 4px 32px rgba(255,255,255,.4);" href="https://play.google.com/store/apps/details?id=com.bizpocket.app" target="_blank">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+        <path d="M3 20.5v-17c0-.83 1-1.3 1.7-.8l15 8.5a1 1 0 0 1 0 1.6l-15 8.5C3.99 21.8 3 21.33 3 20.5Z" fill="#4CAF50"/>
         <path d="M17.5 8.5 5.5.5l8.5 11.5L17.5 8.5Z" fill="#EA4335"/>
         <path d="M22 12c0 .73-.4 1.37-1 1.73L18 15.5 14 12l4-3.5 3 1.77c.6.36 1 1 1 1.73Z" fill="#FBBC05"/>
         <path d="M5.5 23.5l12-8-3.5-3.5L5.5 23.5Z" fill="#4285F4"/>
       </svg>
       <div class="gplay-btn-text">
         <small>GET IT ON</small>
-        Google Play
+        <strong>Google Play</strong>
       </div>
     </a>
   </div>
