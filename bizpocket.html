@@ -531,11 +531,45 @@
       .lang-grid { grid-template-columns: repeat(2,1fr); }
       .hero-stats { flex-direction: column; gap: 18px; }
     }
-  </style>
+  
+    /* ── ANIMATIONS ── */
+    /* Scroll progress */
+    #bp-progress {
+      position: fixed; top: 0; left: 0; height: 2px; z-index: 9999;
+      background: #fff; transform-origin: left; transform: scaleX(0);
+      transition: transform .1s linear;
+    }
+    /* Feat card mouse glow */
+    .feat-card { position: relative; overflow: hidden; }
+    .feat-card::after {
+      content: ''; position: absolute; inset: 0; border-radius: var(--radius);
+      background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.06) 0%, transparent 55%);
+      opacity: 0; transition: opacity .3s; pointer-events: none;
+    }
+    .feat-card:hover::after { opacity: 1; }
+    /* Step card hover */
+    .step { transition: background .25s, border-color .25s, transform .25s; }
+    .step:hover { transform: translateY(-4px); background: rgba(255,255,255,.08) !important; border-color: rgba(255,255,255,.25) !important; }
+    /* Plan card */
+    .plan-card { transition: transform .3s, box-shadow .3s; }
+    .plan-card:hover { transform: translateY(-5px); }
+    /* Lang card bounce */
+    .lang-card { transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s, border-color .3s; }
+    .lang-card:hover { transform: translateY(-6px) scale(1.03); }
+
+    /* Report card lift */
+    .report-card { transition: transform .3s, box-shadow .3s, border-color .3s; }
+    .report-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+    /* Particles canvas */
+    #bp-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .2; }
+</style>
 </head>
 <body>
 
 <!-- ═══ NAV ════════════════════════════════════════════ -->
+<div id="bp-progress"></div>
+<canvas id="bp-canvas"></canvas>
 <nav>
   <div class="nav-inner">
     <div class="nav-logo">
